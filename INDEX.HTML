@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+
+    <style>
+        body {
+            background-color: blue;
+            word-spacing: 10px font-family: Arial, sans-serif;
+            margin: 200px;
+            text-align: center;
+            border: 1px solid black;
+            padding: 20px;
+            background-color: hsl(214, 100%, 99%);
+            box-shadow: #3498db 0px 0px 10px;
+            border-color: blue;
+        }
+        
+        label {
+            font-size: 20px;
+        }
+        
+        input {
+            background-color: hsl(221, 72%, 64%);
+            color: rgb(237, 230, 230);
+            border: none;
+            padding: 5px;
+            text-align: center;
+            width: 50px;
+        }
+        
+        button {
+            background-color: #3194d6;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        function calculate() {
+            var cats = parseFloat(document.getElementById("chickens").value);
+            var dogs = parseFloat(document.getElementById("pigs").value);
+
+            var catFeet = cats * 4;
+            var dogsFeet = dogs * 4;
+
+            var totalFeet = catFeet + dogsFeet;
+
+            document.getElementById("result").innerText =
+                "total number of legs: " + totalFeet;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>My Farm</h1>
+
+    <p>List of the animals in my farm:</p>
+
+    <form onsubmit="event.preventDefault(); calculate();">
+        <label for="chickens">Number of Cats:</label>
+        <input type="number" id="chickens" value="5" required /><br /><br />
+
+        <label for="pigs">Number of Dogs:</label>
+        <input type="number" id="pigs" value="10" required /><br /><br />
+
+        <button type="submit">Submit</button>
+
+        <p id="result">Total number of legs:</p>
+    </form>
+</body>
+
+</html>
